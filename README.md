@@ -25,7 +25,7 @@ This Learning Management System (LMS) project is developed using Python and the 
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/lms-project.git
+    git clone https://github.com/sameer358/lms-project.git
     ```
 
 2. Navigate to the project directory:
