@@ -11,14 +11,14 @@ body {
 }
 
 header {
-    background-color: hsl(209, 86%, 54%);
+    background-color: #6656f9;
     color: #fff;
     padding: 20px;
     text-align: center;
 }
 
 nav {
-    background-color: #6b6767;
+    background-color: #6656f9;
     color: #fff;
     padding: 10px;
 }
@@ -51,7 +51,7 @@ footer {
     position: fixed; /* Fixed position ensures it stays at the bottom even when scrolling */
     bottom: 0;
     width: 100%; /* Ensure it spans the entire width of the page */
-    background-color: #605a5a;
+    background-color: #6656f9;
     color: #fff;
     text-align: center; /* Center the text horizontally */
     padding: 10px;
@@ -96,3 +96,61 @@ input[type="submit"]:hover {
     background-color: hsl(262, 73%, 46%); /* Darker color on hover */
 }
 
+/* Reset some default styles */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #6656f9;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #6656f9;
+    color: #fff;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li.login-icon {
+    float: right;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #6656f9;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}

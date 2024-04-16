@@ -1,0 +1,50 @@
+
+    .sidebar {
+        background-color: #f8f9fa; /* Set sidebar background color */
+        padding: 15px; /* Set padding for sidebar */
+        height: 100%; /* Set sidebar height */
+        position: fixed; /* Fix sidebar position */
+        top: 0; /* Align sidebar to the top */
+        left: 0; /* Align sidebar to the left */
+        width: 250px; /* Set sidebar width */
+        overflow-x: hidden; /* Hide horizontal scrollbar */
+        z-index: 1000; /* Set sidebar z-index */
+        transition: transform 0.3s ease; /* Add transition for smooth animation */
+    }
+
+    .content {
+        margin-left: 250px; /* Adjust content margin to accommodate sidebar */
+        padding: 20px; /* Add padding to content */
+        transition: margin-left 0.3s ease; /* Add transition for smooth animation */
+        position: relative; /* Ensure proper stacking context */
+        z-index: 1; /* Set content z-index */
+    }
+
+    /* Add this CSS to hide the sidebar by default */
+    .sidebar.active {
+        transform: translateX(-250px); /* Move sidebar off-screen */
+    }
+
+    /* Add this CSS to show the sidebar when active class is present */
+    .content.active {
+        margin-left: 0; /* Reset content margin */
+    }
+
+    /* Add this CSS to style the toggle button */
+    #toggleSidebar {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 1001; /* Ensure button stays above sidebar */
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    #toggleSidebar:focus {
+        outline: none; /* Remove outline on focus for better aesthetics */
+    }
+
+    #toggleSidebar:hover {
+        color: #007bff; /* Change color on hover */
+    }
