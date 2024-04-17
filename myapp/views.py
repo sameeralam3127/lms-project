@@ -1,7 +1,8 @@
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required  # Import login_required decorator
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
+from .models import Course
 
 def index(request):
     return render(request, 'index.html')
@@ -9,6 +10,7 @@ def index(request):
 @login_required
 def profile(request):
     return render(request, 'profile.html')
+
 
 def signup(request):
     if request.method == 'POST':
@@ -20,3 +22,10 @@ def signup(request):
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
+
+@login_required
+def assigned_courses(request):
+    # Get assigned courses for the current user
+    assigned_courses = request.user.courses.all()
+    
+    return render(request, 'assigned_courses.html', {'assigned_courses': assigned_courses})

@@ -8,4 +8,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),  # Include Django's authentication URLs
     path('signup/', views.signup, name='signup'),
     path('accounts/profile/', views.profile, name='profile'),  # Ensure the profile URL is defined like this
+    path('assigned_courses/', views.assigned_courses, name='assigned_courses'),
 ]

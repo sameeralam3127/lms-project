@@ -73,7 +73,7 @@
                 <a class="nav-link active" href="{% url 'profile' %}">Profiles</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Courses</a>
+                <a class="nav-link" href="{% url 'assigned_courses' %}">Courses</a> <!-- Change the href to the URL of the assigned_courses view -->
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Assignments</a>
@@ -83,6 +83,7 @@
             </li>
         </ul>
     </div>
+    
     <!-- Toggle button -->
     <button id="toggleSidebar"><i class="fas fa-bars"></i></button>
     <!-- Page content -->
@@ -112,14 +113,10 @@
             <h1>LMS</h1>
             <p>Welcome to The Learning Hub, your ultimate destination for seamless and effective online learning. Our Learning Management System (LMS) is designed to revolutionize the way education is imparted and received, offering a comprehensive platform for students, educators, and administrators alike. With user-friendly interfaces, advanced features, and robust support, we strive to create an environment where learning knows no bounds.</p>
         </div>
+
     </div>
 
-    <!-- Footer -->
-    <footer class="mt-5">
-        <div class="container">
-            <p>&copy; 2024 Your Website Name. All rights reserved.</p>
-        </div>
-    </footer>
+   
 
     <!-- Add Bootstrap JS scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
