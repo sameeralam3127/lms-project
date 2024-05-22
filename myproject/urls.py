@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+from .views import profile, profile_edit
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -9,4 +11,6 @@ urlpatterns = [
     path('signup/', views.signup, name='signup'),
     path('accounts/profile/', views.profile, name='profile'),  # Ensure the profile URL is defined like this
     path('assigned_courses/', views.assigned_courses, name='assigned_courses'),
+    path('profile/', profile, name='profile'),
+    path('profile/edit/', profile_edit, name='profile_edit'),
 ]

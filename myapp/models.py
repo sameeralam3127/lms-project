@@ -19,3 +19,4 @@ def assigned_courses(request):
     assigned_courses = request.user.courses.all()
     
     return render(request, 'assigned_courses.html', {'assigned_courses': assigned_courses})
+

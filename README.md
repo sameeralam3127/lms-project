@@ -2,12 +2,9 @@
 
 This Learning Management System (LMS) project is developed using Python and the Django framework. It serves as a platform for managing courses, students, instructors, and various aspects of online learning.
 
-<img width="920" alt="image" src="https://github.com/sameer358/lms-project/assets/24916603/b1d5f8dc-5018-45b8-9a25-1922f247d566">
-
-
-<img width="898" alt="image" src="https://github.com/sameer358/lms-project/assets/24916603/4fbad45f-4fa7-42c8-9973-f999dc7c17b1">
-<img width="898" alt="image" src="https://github.com/sameer358/lms-project/assets/24916603/c130de37-e2a6-44ab-9fe6-8d5bf45e8e4b">
-
+<img width="950" alt="image" src="https://github.com/sameer358/lms-project/assets/24916603/abcca7bb-dce9-4657-b6f2-14d872372238">
+<img width="895" alt="image" src="https://github.com/sameer358/lms-project/assets/24916603/103151b0-54d8-41a3-b8e0-6a9df9a9e653">
+<img width="573" alt="image" src="https://github.com/sameer358/lms-project/assets/24916603/ac1d69ad-342a-4385-9cf5-cc63125e7d9b">
 
 
 

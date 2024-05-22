@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assigned Courses</title>
     <!-- Add Bootstrap CSS link -->
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Add Font Awesome CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
@@ -38,19 +38,67 @@
     </nav>
 
     <!-- Main content -->
-    <div class="container">
-        <h1>Assigned Courses</h1>
-        <ul>
-            {% for course in assigned_courses %}
-                <li>{{ course.title }}</li>
-                <!-- Display other course details as needed -->
-            {% endfor %}
-        </ul>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-list"></i> Playlist
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div class="container mt-4">
+                    <h1 class="mb-4">Assigned Courses</h1>
+                    <div class="row">
+                        {% for course in assigned_courses %}
+                        <div class="col-md-4 mb-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ course.title }}</h5>
+                                    <!-- Add more course details here if needed -->
+                                    <button class="btn btn-primary btn-block" onclick="playVideo('{{ course.video_url }}')">Play</button>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Video player -->
+    <div id="video-container" class="container mt-5">
+        <video id="video-player" controls class="w-100">
+            <!-- Your video source will be dynamically added here -->
+        </video>
     </div>
 
     <!-- Add Bootstrap JS scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script>
+        function playVideo(videoUrl) {
+            var videoPlayer = document.getElementById('video-player');
+            var videoSource = document.createElement('source');
+            videoSource.setAttribute('src', videoUrl);
+            videoSource.setAttribute('type', 'video/mp4');
+            videoPlayer.innerHTML = ''; // Clear existing sources
+            videoPlayer.appendChild(videoSource);
+            videoPlayer.play();
+            // Optionally, you can also hide the assigned courses section
+            document.querySelector('.container').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
