@@ -1,5 +1,10 @@
 # Learning Management System (LMS) Project
 
+## Live URL
+
+[Visit the live site](https://sameeralam3127.pythonanywhere.com/)
+
+
 This Learning Management System (LMS) project is developed using Python and the Django framework. It serves as a platform for managing courses, students, instructors, and various aspects of online learning.
 
 <img width="950" alt="image" src="https://github.com/sameer358/lms-project/assets/24916603/abcca7bb-dce9-4657-b6f2-14d872372238">
