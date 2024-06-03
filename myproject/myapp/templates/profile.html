@@ -1,0 +1,283 @@
+<<<<<<< HEAD
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Add any additional styles here */
+        .sidebar {
+            background-color: #f8f9fa; /* Set sidebar background color */
+            padding: 15px; /* Set padding for sidebar */
+            height: 100%; /* Set sidebar height */
+            position: fixed; /* Fix sidebar position */
+            top: 0; /* Align sidebar to the top */
+            left: 0; /* Align sidebar to the left */
+            width: 250px; /* Set sidebar width */
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+            z-index: 1000; /* Set sidebar z-index */
+            transition: transform 0.3s ease; /* Add transition for smooth animation */
+        }
+
+        .content {
+            margin-left: 250px; /* Adjust content margin to accommodate sidebar */
+            padding: 20px; /* Add padding to content */
+            transition: margin-left 0.3s ease; /* Add transition for smooth animation */
+            position: relative; /* Ensure proper stacking context */
+            z-index: 1; /* Set content z-index */
+        }
+
+        /* Add this CSS to hide the sidebar by default */
+        .sidebar.active {
+            transform: translateX(-250px); /* Move sidebar off-screen */
+        }
+
+        /* Add this CSS to show the sidebar when active class is present */
+        .content.active {
+            margin-left: 0; /* Reset content margin */
+        }
+
+        /* Add this CSS to style the toggle button */
+        #toggleSidebar {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 1001; /* Ensure button stays above sidebar */
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        #toggleSidebar:focus {
+            outline: none; /* Remove outline on focus for better aesthetics */
+        }
+
+        #toggleSidebar:hover {
+            color: #007bff; /* Change color on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <br></br>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'profile_edit' %}">Profiles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'assigned_courses' %}">Courses</a> <!-- Change the href to the URL of the assigned_courses view -->
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Assignments</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Grades</a>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- Toggle button -->
+    <button id="toggleSidebar"><i class="fas fa-bars"></i></button>
+    <!-- Page content -->
+    <div id="content" class="content">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <span class="navbar-text">
+                            Welcome, {{ user.username }}!
+                        </span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <div class="container">
+            <h1>LMS</h1>
+            <p>Welcome to The Learning Hub, your ultimate destination for seamless and effective online learning. Our Learning Management System (LMS) is designed to revolutionize the way education is imparted and received, offering a comprehensive platform for students, educators, and administrators alike. With user-friendly interfaces, advanced features, and robust support, we strive to create an environment where learning knows no bounds.</p>
+        </div>
+
+    </div>
+
+   
+
+    <!-- Add Bootstrap JS scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Get references to the sidebar and content elements
+        const sidebar = document.getElementById('sidebar');
+        const content = document.getElementById('content');
+        const toggleButton = document.getElementById('toggleSidebar');
+
+        // Add event listener to the toggle button
+        toggleButton.addEventListener('click', function() {
+            // Toggle the 'active' class on the sidebar and content elements
+            sidebar.classList.toggle('active');
+            content.classList.toggle('active');
+        });
+    </script>
+    
+</body>
+</html>
+=======
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Add any additional styles here */
+        .sidebar {
+            background-color: #f8f9fa; /* Set sidebar background color */
+            padding: 15px; /* Set padding for sidebar */
+            height: 100%; /* Set sidebar height */
+            position: fixed; /* Fix sidebar position */
+            top: 0; /* Align sidebar to the top */
+            left: 0; /* Align sidebar to the left */
+            width: 250px; /* Set sidebar width */
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+            z-index: 1000; /* Set sidebar z-index */
+            transition: transform 0.3s ease; /* Add transition for smooth animation */
+        }
+
+        .content {
+            margin-left: 250px; /* Adjust content margin to accommodate sidebar */
+            padding: 20px; /* Add padding to content */
+            transition: margin-left 0.3s ease; /* Add transition for smooth animation */
+            position: relative; /* Ensure proper stacking context */
+            z-index: 1; /* Set content z-index */
+        }
+
+        /* Add this CSS to hide the sidebar by default */
+        .sidebar.active {
+            transform: translateX(-250px); /* Move sidebar off-screen */
+        }
+
+        /* Add this CSS to show the sidebar when active class is present */
+        .content.active {
+            margin-left: 0; /* Reset content margin */
+        }
+
+        /* Add this CSS to style the toggle button */
+        #toggleSidebar {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 1001; /* Ensure button stays above sidebar */
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        #toggleSidebar:focus {
+            outline: none; /* Remove outline on focus for better aesthetics */
+        }
+
+        #toggleSidebar:hover {
+            color: #007bff; /* Change color on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <br></br>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'profile_edit' %}">Profiles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'assigned_courses' %}">Courses</a> <!-- Change the href to the URL of the assigned_courses view -->
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Assignments</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Grades</a>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- Toggle button -->
+    <button id="toggleSidebar"><i class="fas fa-bars"></i></button>
+    <!-- Page content -->
+    <div id="content" class="content">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <span class="navbar-text">
+                            Welcome, {{ user.username }}!
+                        </span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main content -->
+        <div class="container">
+            <h1>LMS</h1>
+            <p>Welcome to The Learning Hub, your ultimate destination for seamless and effective online learning. Our Learning Management System (LMS) is designed to revolutionize the way education is imparted and received, offering a comprehensive platform for students, educators, and administrators alike. With user-friendly interfaces, advanced features, and robust support, we strive to create an environment where learning knows no bounds.</p>
+        </div>
+
+    </div>
+
+   
+
+    <!-- Add Bootstrap JS scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Get references to the sidebar and content elements
+        const sidebar = document.getElementById('sidebar');
+        const content = document.getElementById('content');
+        const toggleButton = document.getElementById('toggleSidebar');
+
+        // Add event listener to the toggle button
+        toggleButton.addEventListener('click', function() {
+            // Toggle the 'active' class on the sidebar and content elements
+            sidebar.classList.toggle('active');
+            content.classList.toggle('active');
+        });
+    </script>
+    
+</body>
+</html>
+>>>>>>> edb0d550bb3b14100fe77431cd9e7433f0c5f397
