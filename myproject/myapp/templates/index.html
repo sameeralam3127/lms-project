@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LMS</title>
+    <title>Learning Management Systems</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="path/to/your/favicon.ico" type="image/x-icon">
+
     <style>
         .custom-navbar {
             background: linear-gradient(45deg, red, blue);
@@ -56,8 +58,8 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg custom-navbar">
-        <a class="navbar-brand" href="#">
-            <i class="fas fa-home"></i> Home
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <i class="fas fa-home"></i>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
